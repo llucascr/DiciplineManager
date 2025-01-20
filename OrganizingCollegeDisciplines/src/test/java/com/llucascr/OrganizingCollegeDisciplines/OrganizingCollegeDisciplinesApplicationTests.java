@@ -1,10 +1,10 @@
-package com.llucascr.OrganizingCollegeMaterials;
+package com.llucascr.OrganizingCollegeDisciplines;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class OrganizingCollegeMaterialsApplicationTests {
+class OrganizingCollegeDisciplinesApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.llucascr</groupId>
-	<artifactId>OrganizingCollegeMaterials</artifactId>
+	<artifactId>OrganizingCollegeDisciplines</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>OrganizingCollegeMaterials</name>
+	<name>OrganizingCollegeDisciplines</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

@@ -1,13 +1,13 @@
-package com.llucascr.OrganizingCollegeMaterials;
+package com.llucascr.OrganizingCollegeDisciplines;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OrganizingCollegeMaterialsApplication {
+public class OrganizingCollegeDisciplinesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OrganizingCollegeMaterialsApplication.class, args);
+		SpringApplication.run(OrganizingCollegeDisciplinesApplication.class, args);
 	}
 
 }
