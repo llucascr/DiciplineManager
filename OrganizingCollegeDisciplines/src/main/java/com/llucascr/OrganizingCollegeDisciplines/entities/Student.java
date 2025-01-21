@@ -6,8 +6,7 @@ import lombok.Setter;
 
 import java.util.Objects;
 
-@Getter
-@Setter
+
 @Entity
 @Table(name = "tb_student")
 public class Student {
@@ -29,6 +28,38 @@ public class Student {
         Id = id;
         this.name = name;
         this.birthdayDate = birthdayDate;
+        this.email = email;
+    }
+
+    public long getId() {
+        return Id;
+    }
+
+    public void setId(long id) {
+        Id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBirthdayDate() {
+        return birthdayDate;
+    }
+
+    public void setBirthdayDate(String birthdayDate) {
+        this.birthdayDate = birthdayDate;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
     }
 

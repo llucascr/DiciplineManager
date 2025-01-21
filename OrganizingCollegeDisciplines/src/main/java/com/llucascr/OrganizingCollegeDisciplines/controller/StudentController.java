@@ -1,5 +1,6 @@
 package com.llucascr.OrganizingCollegeDisciplines.controller;
 
+import com.llucascr.OrganizingCollegeDisciplines.dto.StudentDTO;
 import com.llucascr.OrganizingCollegeDisciplines.entities.Student;
 import com.llucascr.OrganizingCollegeDisciplines.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class StudentController {
     private StudentService studentService;
 
     @GetMapping
-    public List<Student> findAll() {
+    public List<StudentDTO> findAll() {
         return studentService.findAll();
     }
 
