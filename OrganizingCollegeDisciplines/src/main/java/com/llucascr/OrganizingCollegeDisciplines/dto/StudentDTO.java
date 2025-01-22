@@ -8,6 +8,7 @@ public class StudentDTO {
     private String name;
     private String birthdayDate;
     private String email;
+    private String course;
 
     public StudentDTO() {
     }
@@ -17,6 +18,7 @@ public class StudentDTO {
         name = student.getName();
         birthdayDate = student.getBirthdayDate();
         email = student.getEmail();
+        course = student.getCourse();
     }
 
     public Long getId() {
@@ -33,5 +35,9 @@ public class StudentDTO {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getCourse() {
+        return course;
     }
 }

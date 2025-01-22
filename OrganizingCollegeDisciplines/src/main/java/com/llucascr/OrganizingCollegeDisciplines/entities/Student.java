@@ -17,16 +17,18 @@ public class Student {
     private String name;
     private String birthdayDate;
     private String email;
+    private String course;
 
     // Constructor
     public Student() {
     }
 
-    public Student(long id, String name, String birthdayDate, String email) {
-        Id = id;
+    public Student(long id, String name, String birthdayDate, String email, String course) {
+        this.Id = id;
         this.name = name;
         this.birthdayDate = birthdayDate;
         this.email = email;
+        this.course = course;
     }
 
     public long getId() {
@@ -59,6 +61,14 @@ public class Student {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getCourse() {
+        return course;
+    }
+
+    public void setCourse(String course) {
+        this.course = course;
     }
 
     // Equals / HashCode

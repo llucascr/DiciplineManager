@@ -7,6 +7,7 @@ public class StudentMinDTO {
     private String name;
     private String birthdayDate;
     private String email;
+    private String course;
 
     public StudentMinDTO() {
     }
@@ -15,6 +16,7 @@ public class StudentMinDTO {
         name = student.getName();
         birthdayDate = student.getBirthdayDate();
         email = student.getEmail();
+        course = student.getCourse();
     }
 
     public String getName() {
@@ -27,5 +29,9 @@ public class StudentMinDTO {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getCourse() {
+        return course;
     }
 }
