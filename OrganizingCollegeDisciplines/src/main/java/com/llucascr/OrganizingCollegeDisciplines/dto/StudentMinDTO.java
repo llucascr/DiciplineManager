@@ -2,25 +2,19 @@ package com.llucascr.OrganizingCollegeDisciplines.dto;
 
 import com.llucascr.OrganizingCollegeDisciplines.entities.Student;
 
-public class StudentDTO {
+public class StudentMinDTO {
 
-    private Long id;
     private String name;
     private String birthdayDate;
     private String email;
 
-    public StudentDTO() {
+    public StudentMinDTO() {
     }
 
-    public StudentDTO(Student student) {
-        id = student.getId();
+    public StudentMinDTO(Student student) {
         name = student.getName();
         birthdayDate = student.getBirthdayDate();
         email = student.getEmail();
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public String getName() {
