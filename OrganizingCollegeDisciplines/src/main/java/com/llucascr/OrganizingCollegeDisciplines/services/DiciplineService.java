@@ -21,4 +21,10 @@ public class DiciplineService {
         return result.stream().map(x -> new DiciplineDTO(x)).toList();
     }
 
+    @Transactional(readOnly = true)
+    public DiciplineDTO findById(Long diciplineId) {
+        Dicipline result = diciplineRepository.findById(diciplineId).get();
+        return new DiciplineDTO(result);
+    }
+
 }

@@ -1,6 +1,7 @@
 package com.llucascr.OrganizingCollegeDisciplines.dto;
 
 import com.llucascr.OrganizingCollegeDisciplines.entities.Student;
+import com.llucascr.OrganizingCollegeDisciplines.projections.StudentMinProjection;
 
 public class StudentMinDTO {
 
@@ -18,6 +19,7 @@ public class StudentMinDTO {
         email = student.getEmail();
         course = student.getCourse();
     }
+
 
     public String getName() {
         return name;
