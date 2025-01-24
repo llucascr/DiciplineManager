@@ -35,4 +35,10 @@ public class StudentService {
         List<StudentMinProjection> result = studentRepository.searchByDicipline(studentId);
         return result.stream().map(x -> new StudentAndDiciplineDTO(x)).toList();
     }
+
+    @Transactional(readOnly = true)
+    public StudentMinDTO insertStudent(Student student) {
+        Student result = studentRepository.save(student);
+        return new StudentMinDTO(result);
+    }
 }

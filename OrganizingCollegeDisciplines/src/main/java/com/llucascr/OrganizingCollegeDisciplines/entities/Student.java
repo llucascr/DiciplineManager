@@ -9,7 +9,7 @@ import java.util.Objects;
 @Table(name = "tb_student")
 public class Student {
 
-//    @Column(name = "ra")// todo: pesquisar se uso Id e altero o nome do atributo na tabela para ra, ou uso ra para ambos
+//    @Column(name = "ra")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long Id;
