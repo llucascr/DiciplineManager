@@ -1,12 +1,12 @@
 package com.llucascr.OrganizingCollegeDisciplines.controller;
 
 import com.llucascr.OrganizingCollegeDisciplines.dto.DiciplineDTO;
+import com.llucascr.OrganizingCollegeDisciplines.dto.DiciplineIdStudentIdDTO;
+import com.llucascr.OrganizingCollegeDisciplines.dto.DiciplineMinDTO;
+import com.llucascr.OrganizingCollegeDisciplines.entities.Dicipline;
 import com.llucascr.OrganizingCollegeDisciplines.services.DiciplineService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,6 +17,7 @@ public class DiciplineController {
     @Autowired
     private DiciplineService diciplineService;
 
+
     @GetMapping
     public List<DiciplineDTO> findAll() {
         return diciplineService.findAll();
@@ -25,5 +26,10 @@ public class DiciplineController {
     @GetMapping(value = "/{diciplineId}")
     public DiciplineDTO findById(@PathVariable Long diciplineId) {
         return diciplineService.findById(diciplineId);
+    }
+
+    @PostMapping(value = "/{studentId}/insert")
+    public DiciplineIdStudentIdDTO insertDicipline(@PathVariable Long studentId, @RequestBody Dicipline dicipline) {
+        return diciplineService.insertDicipline(dicipline, studentId);
     }
 }

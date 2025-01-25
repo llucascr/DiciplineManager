@@ -6,20 +6,20 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_record")
-public class Record {
+public class Registry {
 
     @EmbeddedId
-    private RecordPK id = new RecordPK();
+    private RegistryPK id = new RegistryPK();
 
     private Double testGrade;
     private Double workGrade;
     private Double finalGrade;
     private Double noteWeight;
 
-    public Record() {
+    public Registry() {
     }
 
-    public Record(Student student, Dicipline dicipline,Double testGrade, Double workGrade, Double finalGrade, Double noteWeight) {
+    public Registry(Student student, Dicipline dicipline, Double testGrade, Double workGrade, Double finalGrade, Double noteWeight) {
         id.setStudent(student);
         id.setDicipline(dicipline);
         this.testGrade = testGrade;
@@ -28,11 +28,11 @@ public class Record {
         this.noteWeight = noteWeight;
     }
 
-    public RecordPK getId() {
+    public RegistryPK getId() {
         return id;
     }
 
-    public void setId(RecordPK id) {
+    public void setId(RegistryPK id) {
         this.id = id;
     }
 

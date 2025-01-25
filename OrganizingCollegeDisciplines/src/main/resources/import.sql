@@ -23,3 +23,4 @@ INSERT INTO tb_record (final_grade, note_weight, test_grade, work_grade, dicipli
 INSERT INTO tb_record (final_grade, note_weight, test_grade, work_grade, dicipline_id, student_id) VALUES (6.5, 0.4, 7.0, 6.0, 8, 4);
 INSERT INTO tb_record (final_grade, note_weight, test_grade, work_grade, dicipline_id, student_id) VALUES (8.7, 0.6, 9.0, 8.0, 1, 5);
 INSERT INTO tb_record (final_grade, note_weight, test_grade, work_grade, dicipline_id, student_id) VALUES (7.2, 0.5, 7.5, 7.0, 2, 5);
+--INSERT INTO tb_record (final_grade, note_weight, test_grade, work_grade, dicipline_id, student_id) VALUES (7.2, 0.5, 7.5, 7.0, 2, 6);

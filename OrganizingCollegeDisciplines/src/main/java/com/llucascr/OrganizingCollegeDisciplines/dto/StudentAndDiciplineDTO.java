@@ -10,6 +10,7 @@ public class StudentAndDiciplineDTO {
 ////    private String email;
 //    private String course;
     private String diciplineName;
+    private String status;
     private Double workGrade;
     private Double testGrade;
     private Double noteWeight;
@@ -60,6 +61,14 @@ public class StudentAndDiciplineDTO {
 
     public void setDiciplineName(String diciplineName) {
         this.diciplineName = diciplineName;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Double getWorkGrade() {

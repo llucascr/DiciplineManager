@@ -17,6 +17,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
                 tb_student.email,
                 tb_student.name,
                 tb_dicipline.name AS diciplineName,
+                tb_dicipline.status as status,
                 tb_record.work_grade AS workGrade,
                 tb_record.test_grade AS testGrade,
                 tb_record.note_weight AS noteWeight,

@@ -3,10 +3,9 @@ package com.llucascr.OrganizingCollegeDisciplines.entities;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 
 @Embeddable
-public class RecordPK {
+public class RegistryPK {
 
     @ManyToOne
     @JoinColumn(name = "student_id")
@@ -16,10 +15,10 @@ public class RecordPK {
     @JoinColumn(name = "dicipline_id")
     private Dicipline dicipline;
 
-    public RecordPK() {
+    public RegistryPK() {
     }
 
-    public RecordPK(Student student, Dicipline dicipline) {
+    public RegistryPK(Student student, Dicipline dicipline) {
         this.student = student;
         this.dicipline = dicipline;
     }

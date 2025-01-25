@@ -11,6 +11,6 @@ public interface StudentMinProjection {
     Double getTestGrade();
     Double getNoteWeight();
     Double getFinalGrade();
-
+    String getStatus();
 
 }
