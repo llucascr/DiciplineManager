@@ -2,6 +2,7 @@ package com.llucascr.OrganizingCollegeDisciplines.services;
 
 import com.llucascr.OrganizingCollegeDisciplines.dto.DiciplineDTO;
 import com.llucascr.OrganizingCollegeDisciplines.dto.DiciplineIdStudentIdDTO;
+import com.llucascr.OrganizingCollegeDisciplines.dto.DiciplineMinDTO;
 import com.llucascr.OrganizingCollegeDisciplines.entities.Dicipline;
 import com.llucascr.OrganizingCollegeDisciplines.repositories.DiciplineRepository;
 import com.llucascr.OrganizingCollegeDisciplines.repositories.RegistryRepository;
@@ -37,6 +38,14 @@ public class DiciplineService {
         Dicipline result = diciplineRepository.save(dicipline);
         recordRepository.registry(dicipline.getId(), studentId);
         return new DiciplineIdStudentIdDTO(result, studentId);
+    }
+
+    // todo: atualizar uma diciplina
+
+    @Transactional(readOnly = true)
+    public String deleteDicipline(String diciplineName, Long studentId) {
+        diciplineRepository.deleteDicipline(diciplineName, studentId);
+        return "DELETE diciplineName:" + diciplineName;
     }
 
 }

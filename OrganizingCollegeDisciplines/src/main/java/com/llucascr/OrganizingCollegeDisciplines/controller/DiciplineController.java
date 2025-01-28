@@ -2,7 +2,6 @@ package com.llucascr.OrganizingCollegeDisciplines.controller;
 
 import com.llucascr.OrganizingCollegeDisciplines.dto.DiciplineDTO;
 import com.llucascr.OrganizingCollegeDisciplines.dto.DiciplineIdStudentIdDTO;
-import com.llucascr.OrganizingCollegeDisciplines.dto.DiciplineMinDTO;
 import com.llucascr.OrganizingCollegeDisciplines.entities.Dicipline;
 import com.llucascr.OrganizingCollegeDisciplines.services.DiciplineService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +28,15 @@ public class DiciplineController {
     }
 
     @PostMapping(value = "/{studentId}/insert")
-    public DiciplineIdStudentIdDTO insertDicipline(@PathVariable Long studentId, @RequestBody Dicipline dicipline) {
+    public  DiciplineIdStudentIdDTO insertDicipline(@PathVariable Long studentId, @RequestBody Dicipline dicipline) {
         return diciplineService.insertDicipline(dicipline, studentId);
     }
+
+    @DeleteMapping(value = "/removeDicipline")
+    public String deleteDicipline(@RequestHeader(value = "diciplinename", required = true) String diciplineName,
+                                  @RequestHeader(value = "studentid", required = true) Long studentId) {
+        return diciplineService.deleteDicipline(diciplineName, studentId);
+    }
+
+
 }
