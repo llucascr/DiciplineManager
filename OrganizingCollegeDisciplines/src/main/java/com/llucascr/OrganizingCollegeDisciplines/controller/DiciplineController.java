@@ -5,6 +5,7 @@ import com.llucascr.OrganizingCollegeDisciplines.dto.DiciplineIdStudentIdDTO;
 import com.llucascr.OrganizingCollegeDisciplines.entities.Dicipline;
 import com.llucascr.OrganizingCollegeDisciplines.services.DiciplineService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

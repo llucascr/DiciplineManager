@@ -42,5 +42,20 @@ public class StudentService {
         return new StudentMinDTO(result);
     }
 
+//    public UUID insertStudent(CreateStudentDTO createStudentDTO) {
+//
+//        Student entity = new Student(UUID.randomUUID(),
+//                createStudentDTO.name(),
+//                createStudentDTO.birthdayDate(),
+//                createStudentDTO.email(),
+//                createStudentDTO.course());
+//
+//        Student studentSaved = studentRepository.save(entity);
+//
+//        return studentSaved.getId();
+//    }
+
+
+
     // todo: atualizar os dados do Usuario
 }
