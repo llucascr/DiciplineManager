@@ -1,4 +1,4 @@
-### Discipline Manager
+# Discipline Manager
 Bem-vindo ao Discipline Manager, um serviço web projetado para ajudar estudantes a organizar suas atividades acadêmicas de forma eficiente. Este projeto facilita o gerenciamento de matérias, tarefas e notas através de uma interface simples e intuitiva.
 
 ### Modelo de Objetos
