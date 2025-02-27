@@ -42,20 +42,15 @@ public class StudentService {
         return new StudentMinDTO(result);
     }
 
-//    public UUID insertStudent(CreateStudentDTO createStudentDTO) {
-//
-//        Student entity = new Student(UUID.randomUUID(),
-//                createStudentDTO.name(),
-//                createStudentDTO.birthdayDate(),
-//                createStudentDTO.email(),
-//                createStudentDTO.course());
-//
-//        Student studentSaved = studentRepository.save(entity);
-//
-//        return studentSaved.getId();
-//    }
+    public void updateStudent(Long studentId, Student studentDetails) {
+        Student student = studentRepository.findById(studentId)
+                .orElseThrow(() -> new RuntimeException("student id not found"));
 
+        student.setName(studentDetails.getName());
+        student.setBirthdayDate(studentDetails.getBirthdayDate());
+        student.setEmail(studentDetails.getEmail());
+        student.setCourse(studentDetails.getCourse());
 
-
-    // todo: atualizar os dados do Usuario
+        studentRepository.save(student);
+    }
 }

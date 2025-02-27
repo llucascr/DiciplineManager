@@ -3,9 +3,11 @@ package com.llucascr.OrganizingCollegeDisciplines.controller;
 import com.llucascr.OrganizingCollegeDisciplines.dto.StudentAndDiciplineDTO;
 import com.llucascr.OrganizingCollegeDisciplines.dto.StudentDTO;
 import com.llucascr.OrganizingCollegeDisciplines.dto.StudentMinDTO;
+import com.llucascr.OrganizingCollegeDisciplines.entities.Dicipline;
 import com.llucascr.OrganizingCollegeDisciplines.entities.Student;
 import com.llucascr.OrganizingCollegeDisciplines.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,6 +37,11 @@ public class StudentController {
     @PostMapping
     public StudentMinDTO insertStudent(@RequestBody Student student) {
         return studentService.insertStudent(student);
+    }
+
+    @PutMapping(value = "/updateStudent")
+    public void updateStudent(@RequestBody Student student) {
+        studentService.updateStudent(student.getId(), student);
     }
 
 }

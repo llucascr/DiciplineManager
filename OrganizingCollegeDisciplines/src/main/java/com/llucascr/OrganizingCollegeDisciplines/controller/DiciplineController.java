@@ -17,7 +17,6 @@ public class DiciplineController {
     @Autowired
     private DiciplineService diciplineService;
 
-
     @GetMapping
     public List<DiciplineDTO> findAll() {
         return diciplineService.findAll();
@@ -39,16 +38,9 @@ public class DiciplineController {
         return diciplineService.deleteDicipline(diciplineName, studentId);
     }
 
-//    @PutMapping(value = "/updateDicipline")
-//    public DiciplineDTO updateDicipline(@RequestHeader(value = "desc", required = true) String desc,
-//                                        @RequestHeader(value = "studentId", required = true) long studentId) {
-//        return diciplineService.updateNameDicipline(desc, studentId);
-//    }
-
     @PutMapping(value = "/updateDicipline")
     public void updateDicipline(@RequestBody Dicipline dicipline) {
         diciplineService.updateDicipline(dicipline.getId(), dicipline);
     }
-
 
 }

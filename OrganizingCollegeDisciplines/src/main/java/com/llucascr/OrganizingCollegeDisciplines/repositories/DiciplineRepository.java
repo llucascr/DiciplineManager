@@ -19,9 +19,4 @@ public interface DiciplineRepository extends JpaRepository<Dicipline, Long> {
             """)
     void deleteDicipline(String diciplineName, Long studentId);
 
-    @Modifying
-    @Query(nativeQuery = true, value = """
-            UPDATE tb_dicipline SET name = :desc WHERE  id = :diciplineId
-            """)
-    void updateDicipline(@Param("desc") String desc, @Param("diciplineId") Long diciplineId);
 }
