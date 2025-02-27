@@ -4,6 +4,7 @@ import com.llucascr.OrganizingCollegeDisciplines.entities.Dicipline;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 public interface DiciplineRepository extends JpaRepository<Dicipline, Long> {
     @Modifying
@@ -17,4 +18,10 @@ public interface DiciplineRepository extends JpaRepository<Dicipline, Long> {
             );
             """)
     void deleteDicipline(String diciplineName, Long studentId);
+
+    @Modifying
+    @Query(nativeQuery = true, value = """
+            UPDATE tb_dicipline SET name = :desc WHERE  id = :diciplineId
+            """)
+    void updateDicipline(@Param("desc") String desc, @Param("diciplineId") Long diciplineId);
 }
