@@ -1,8 +1,28 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
 const DisciplineList = ({ disciplines }) => {
+  const [data, setData] = useState(disciplines)
+
+  // requisição aqui
+  function buscarDiciplinas() {
+    axios.get("http://localhost:8080/diciplines")
+      .then((res) => {
+        // setData((prev) => [...prev, res.data])
+        setData(res.data)
+      })
+      .catch((erro) => {
+        console.log(erro)
+      })
+  }
+
+  useEffect(() => {
+    buscarDiciplinas()
+  }, [])
+
   return (
     <div className="table-container">
+      {/* <button onClick={buscarDiciplinas}>busca de diciplinas</button> */}
       <table>
         <thead>
           <tr>
@@ -15,14 +35,14 @@ const DisciplineList = ({ disciplines }) => {
           </tr>
         </thead>
         <tbody>
-          {disciplines.map((discipline, index) => (
+          {data.map((discipline, index) => (
             <tr key={index}>
               <td>{discipline.name}</td>
+              <td>{discipline.duration}</td>
               <td>{discipline.status}</td>
-              <td>{discipline.workGrade}</td>
-              <td>{discipline.testGrade}</td>
+              {/* <td>{discipline.testGrade}</td>
               <td>{discipline.noteWeight}</td>
-              <td>{discipline.finalGrade}</td>
+              <td>{discipline.finalGrade}</td> */}
             </tr>
           ))}
         </tbody>

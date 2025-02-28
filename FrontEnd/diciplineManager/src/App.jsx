@@ -1,21 +1,29 @@
 import React, { useState } from 'react';
-import CourseList from './components/CourseList';
 import DisciplineList from './components/DisciplineList';
-import AddCourseForm from './components/AddCourseForm';
 import AddDisciplineForm from './components/AddDisciplineForm';
 import './index.css';
+import cors from 'cors'
 
 const App = () => {
   const [courses, setCourses] = useState([]);
-  const [disciplines, setDisciplines] = useState([]);
+  //     get          set
+  const [disciplines, setDisciplines] = useState([]); // root
 
   const addCourse = (course) => {
     setCourses([...courses, course]);
   };
 
   const addDiscipline = (discipline) => {
-    setDisciplines([...disciplines, discipline]);
+    // setDisciplines([...disciplines, discipline]);
+    setDisciplines((prev) => [...prev, discipline])
   };
+
+  const removeDicipline = (nome) => {
+    const buscaDiciplina = disciplines.filter((item) => item.nome != nome)
+    // if else
+
+    setDisciplines(buscaDiciplina)
+  }
 
   return (
     <div className="container">
